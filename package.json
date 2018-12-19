@@ -1,0 +1,32 @@
+{
+  "name": "vr-workout",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fitbit/sdk": "~3.0.0-pre.4",
+    "@fitbit/sdk-cli": "^1.5.0-pre.6"
+  },
+  "fitbit": {
+    "appUUID": "a029feb2-3e4a-4dc9-b0f1-43694c33bd57",
+    "appType": "app",
+    "appDisplayName": "VR Workout",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#ffffff",
+    "requestedPermissions": [
+      "access_activity",
+      "access_exercise",
+      "access_heart_rate",
+      "access_user_profile"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson"
+    ],
+    "i18n": {}
+  },
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit"
+  }
+}
