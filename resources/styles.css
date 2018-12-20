@@ -3,7 +3,7 @@
 }
 
 .tile-list-header text {
-  font-weight: bold;
+  font-size: 38;
   fill: yellow;
 }
 
@@ -24,5 +24,16 @@
   }
 
   text {
-    font-family: Seville-Bold-Condensed;
+    font-family: Fabrikat-Black
+  
+  }
+
+  text.data {
+    fill: white;
+    text-anchor: end;
+    font-family: Seville-Condensed;
+  }
+
+  text.final {
+    font-size: 42;
   }

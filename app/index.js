@@ -83,7 +83,7 @@ svgRun.getElementById("btnStop").onclick = () => {
     }
 
     svgConfirm.style.display = "inline";
-    vibration.start("confirmation");
+    vibration.start("nudge");
 }
 
 
@@ -96,16 +96,18 @@ svgConfirm.getElementById("btnLeft").onclick = function(evt) {
 // Confirmation popup: Resume stop clicked - show final screen
 svgConfirm.getElementById("btnRight").onclick = function(evt) {
 
-    txtTotalCalories.text =  `Total Calories:  ${formatCalories(exercise.stats.calories)}`;
-    txtHeartRateAvg.text = `BPM Avg:  ${exercise.stats.heartRate.average}`;
-    txtHeartRateMax.text = `BPM Peak:  ${exercise.stats.heartRate.max}`;
-    txtTotalTime.text = `Total Time:  ${formatActiveTime(exercise.stats.activeTime)}`;
+    txtTotalCalories.text =  formatCalories(exercise.stats.calories);
+    txtHeartRateAvg.text = exercise.stats.heartRate.average;
+    txtHeartRateMax.text = exercise.stats.heartRate.max;
+    txtTotalTime.text = formatActiveTime(exercise.stats.activeTime);
 
     svgEnd.style.display = "inline";
     svgRun.style.display = "none"
 
-    vibration.start("confirmation-max");
+    vibration.start("nudge-max");
     svgConfirm.style.display = "none";
+
+    exercise.stop();
 }
 
 // on app unloading stopping excersize
@@ -128,7 +130,7 @@ function pauseResumeExercise(){
         interval = setInterval(displayCurrentData, 1000);
     }
 
-    vibration.start("bump");
+    vibration.start("nudge");
 }
 
 
@@ -139,7 +141,7 @@ function formatCalories(calories) {
 };
 
 function getZone(heartRate) {
-    return user.heartRateZone(heartRate || 0);
+    return user.heartRateZone(heartRate || 0).toUpperCase();
 };
 
 function zeroPad(num) {
@@ -169,10 +171,10 @@ function formatActiveTime(activeTime) {
 
 // show running data
 function displayCurrentData() {
-    txtCalories.text =  `Calories:  ${formatCalories(exercise.stats.calories)}`;
-    txtHeartrate.text = `Heart Rate:  ${exercise.stats.heartRate.current || 0} BPM`;
-    txtZone.text = `Zone:  ${getZone(exercise.stats.heartRate.current)}`;
-    txtActiveTime.text = `Active Time:  ${formatActiveTime(exercise.stats.activeTime)}`;
+    txtCalories.text =  formatCalories(exercise.stats.calories);
+    txtHeartrate.text = `${exercise.stats.heartRate.current || 0} BPM`;
+    txtZone.text = getZone(exercise.stats.heartRate.current);
+    txtActiveTime.text = formatActiveTime(exercise.stats.activeTime);
 }
 
 

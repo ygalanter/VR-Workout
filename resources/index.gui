@@ -8,11 +8,10 @@
     </symbol>
 
     <symbol id="push-button-round" focusable='true' pointer-events='visible' system-events='all'>
-        
         <rect x="0" y="0" width="100%" height="100%" fill="inherit" rx="15" ry="15"/>
         <rect x="2" y="2" width="100%-4" height="100%-4" fill="black" rx="15" ry="15"/>
         <g  transform='translate(50%,50%)' fill-opacity='inherit'>
-          <text id="text" fill="white" width='100%-4'text-anchor='middle' text-length='10'>
+          <text id="text" fill="white" width='100%-4' text-anchor='middle' text-length='10'>
             <animate attributeName='fill' begin='load;mouseup;mouseout' final='restore'/>
             <animate attributeName='fill' begin='mousedown' to='inherit'/>
           </text>
@@ -78,10 +77,10 @@
   <svg id="svgEnd" display="none">
        <image id="img"/>
        <rect class="full-size" fill="fb-black" opacity="0.85"  />
-       <text fill = "fb-peach" x="5%" y="12%" id="txtTotalCalories">Calories Total                   </text>
-       <text fill = "fb-red" x="5%" y="29%" id="txtHeartRateAvg">BPM Avg                   </text>
-       <text fill = "fb-red" x="5%" y="46%" id="txtHeartRateMax">BPM Avg                   </text>
-       <text fill = "fb-lime" x="5%" y="63%" id="txtTotalTime">Total Time                    </text>
+       <text fill = "fb-peach" x="5%" y="12%" >Calories Total:</text><text class="data final" x="95%" y="12%" id="txtTotalCalories" text-length="4"/>
+       <text fill = "fb-red" x="5%" y="29%" >BPM Avg:</text><text class="data final" x="95%" y="29%" id="txtHeartRateAvg" text-length="7"/>
+       <text fill = "fb-red" x="5%" y="46%" >BPM Peak:</text><text class="data final" x="95%" y="46%" id="txtHeartRateMax" text-length="7" />
+       <text fill = "fb-lime" x="5%" y="63%" >Total Time:</text><text class="data final" x="95%" y="63%" id="txtTotalTime" text-length="10"/>
        <use id="btn" href="#push-button-round" fill="fb-blue" x="31%" y="100% - 72"  width="38%" height="70" >
           <set href="#text" attributeName="text-buffer" to="Exit" />
           <set href="#text" attributeName="y" to="12" />
@@ -93,10 +92,10 @@
   <svg id="svgRun" display="none">
     <image id="img" opacity="0.15"/>
 
-    <text fill = "fb-peach" x="3%" y="12%" id="txtCalories">Calories                    </text>
-    <text fill = "fb-red" x="3%" y="29%" id="txtHeartrate">Heart Rate                    </text>
-    <text fill = "fb-red" x="3%" y="46%" id="txtZone">Zone                    </text>
-    <text fill = "fb-lime" x="3%" y="63%" id="txtActiveTime">Active Time                    </text>
+    <text fill = "fb-peach" x="5%" y="12%">Calories:</text><text class="data" x="95%" y="12%" id="txtCalories" text-length="4"/>
+    <text fill = "fb-red" x="5%" y="29%">Heart Rate:</text><text class="data" x="95%" y="29%" id="txtHeartrate" text-length="7"/>
+    <text fill = "fb-red" x="5%" y="46%">Zone:</text><text class="data" x="95%" y="46%" id="txtZone" text-length="20" />
+    <text fill = "fb-lime" x="5%" y="63%">Active Time:</text><text class="data" x="95%" y="63%" id="txtActiveTime" text-length="10"/>
     
     <use id="btnPauseResume" href="#push-button-round" fill="fb-blue" x="1%" y="100% - 75" width="45%" height="75" >
        <set href="#text" attributeName="text-buffer" to="Pause " />
@@ -127,13 +126,13 @@
         </use>
 
         <!-- Left button -->
-        <use id="btnLeft" fill="green" href="#push-button-round" x="1%" y="100% - 75" width="45%" height="75">
+        <use id="btnLeft" fill="green" href="#push-button-round" x="1%" y="100% - 76" width="45%" height="75">
           <set href="#text" attributeName="text-buffer" to="Resume" />
            <set href="#text" attributeName="y" to="12" />
         </use>
 
         <!-- Right button -->
-        <use id="btnRight" fill="red" href="#push-button-round" x="62%" y="100% - 75" width="38%" height="75">
+        <use id="btnRight" fill="red" href="#push-button-round" x="61%" y="100% - 76" width="38%" height="75">
           <set href="#text" attributeName="text-buffer" to="Stop" />
            <set href="#text" attributeName="y" to="12" />
         </use>
