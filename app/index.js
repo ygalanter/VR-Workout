@@ -82,6 +82,7 @@ svgRun.getElementById("btnStop").onclick = () => {
         pauseResumeExercise();
     }
 
+    svgRun.style.display = "none";
     svgConfirm.style.display = "inline";
     vibration.start("nudge");
 }
@@ -90,6 +91,7 @@ svgRun.getElementById("btnStop").onclick = () => {
 // Confirmation popup: Resume button clicked
 svgConfirm.getElementById("btnLeft").onclick = function(evt) {
     pauseResumeExercise();
+    svgRun.style.display = "inline";
     svgConfirm.style.display = "none";
 }
   

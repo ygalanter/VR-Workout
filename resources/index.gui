@@ -117,13 +117,8 @@
         <rect class="full-size" fill="fb-black" />
 
         <!-- Title and text -->
-        <use href="#mixed-text-center-mid" class="dialog-mixed-text" fill="fb-white">
-          <set href="#top-padding" attributeName="display" to="none" />
-          <set href="#header/text" attributeName="text-buffer" to="Stop exercise" />
-          <set href="#header/text" attributeName="fill" to="fb-magenta"/>
-          <set href="#copy/text" attributeName="text-buffer" to="Are you sure?" />
-          <set href="#bottom-padding" attributeName="display" to="none" />
-        </use>
+        <text x="50%" y="35%" text-anchor="middle" class="data final" fill="fb-red">Stop Exercise</text>
+        <text x="50%" y="55%" text-anchor="middle" class="data">Are you sure?</text>
 
         <!-- Left button -->
         <use id="btnLeft" fill="green" href="#push-button-round" x="1%" y="100% - 76" width="45%" height="75">
