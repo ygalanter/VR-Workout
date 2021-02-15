@@ -1,0 +1,136 @@
+<svg viewport-fill="black">
+
+  <defs>
+    <symbol id="my-tile-item" href="#tile-list-item" focusable="false" pointer-events="none" system-events="all">
+      <text id="text" />
+      <rect id="tile-divider-bottom" class="tile-divider-bottom" />
+      <rect id="touch-me" pointer-events="all" x="0" y="0" width="100%" height="100%-2" opacity="0" />
+    </symbol>
+
+    <symbol id="push-button-round" focusable='true' pointer-events='visible' system-events='all'>
+        <rect x="0" y="0" width="100%" height="100%" fill="inherit" rx="15" ry="15"/>
+        <rect x="2" y="2" width="100%-4" height="100%-4" fill="black" rx="15" ry="15"/>
+        <g  transform='translate(50%,50%)' fill-opacity='inherit'>
+          <text id="text" fill="white" width='100%-4' text-anchor='middle' text-length='10'>
+            <animate attributeName='fill' begin='load;mouseup;mouseout' final='restore'/>
+            <animate attributeName='fill' begin='mousedown' to='inherit'/>
+          </text>
+        </g>
+      </symbol>
+
+
+  </defs>
+
+  <!-- Selecting screen -->
+  <svg id="svgSelect" x="30">
+    <use id="my-list" href="#tile-list">
+      <var id="separator-height-bottom" value="2" />
+      <use href="#tile-list-header" class="tile-list-header">
+          <text>Select Workout</text>
+      </use>
+      <use href="#my-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="[Generic VR Workout]" />
+      </use>
+      <use href="#my-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="Audioshield" />
+      </use>
+      <use href="#my-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="BoxVR" />
+      </use>
+      <use href="#my-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="Beat Saber" />
+      </use>    
+      <use href="#my-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="Eleven Table Tennis" />
+      </use>      
+      <use href="#my-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="Soundboxing" />
+      </use>
+      <use href="#my-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="Space Pirate Trainer" />
+      </use> 
+      <use href="#my-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="Synth Riders" />
+      </use>
+       <use href="#my-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="The Thrill of the Fight" />
+      </use>     
+   </use>
+  </svg>
+
+  <!-- Starting screen -->
+  <svg id="svgStart" display="none">
+    <image id="img"/>
+
+    <use id="btnChange" href="#push-button-round" fill="fb-blue" x="30" y="100% - 95" width="40%" height="70" >
+      <set href="#text" attributeName="text-buffer" to="Change" />
+      <set href="#text" attributeName="y" to="12" />
+    </use>
+
+    <use id="btnStart" href="#push-button-round" fill="fb-blue" x="60%-25" y="100% - 95" width="38%" height="70" >
+      <set href="#text" attributeName="text-buffer" to="Start" />
+      <set href="#text" attributeName="y" to="12" />
+    </use>
+  </svg>
+
+  <!-- Ending screen -->
+  <svg id="svgEnd" display="none">
+       <image id="img"/>
+       <rect class="full-size" fill="fb-black" opacity="0.85"  />
+       <text fill = "fb-peach" x="5% + 20" y="12%" >Calories Total:</text><text class="data final" x="95% - 20" y="12%" id="txtTotalCalories" text-length="4"/>
+       <text fill = "fb-red" x="5% + 20" y="29%" >BPM Avg:</text><text class="data final" x="95% - 20" y="29%" id="txtHeartRateAvg" text-length="7"/>
+       <text fill = "fb-red" x="5% + 20" y="46%" >BPM Peak:</text><text class="data final" x="95% - 20" y="46%" id="txtHeartRateMax" text-length="7" />
+       <text fill = "fb-lime" x="5% + 20" y="63%" >Total Time:</text><text class="data final" x="95% - 20" y="63%" id="txtTotalTime" text-length="10"/>
+       <use id="btn" href="#push-button-round" fill="fb-blue" x="31%" y="100% - 72"  width="38%" height="70" >
+          <set href="#text" attributeName="text-buffer" to="Exit" />
+          <set href="#text" attributeName="y" to="12" />
+       </use>
+   </svg>>
+ 
+ 
+  <!-- Running screen -->
+  <svg id="svgRun" display="none">
+    <image id="img" opacity="0.15"/>
+
+    <text fill = "fb-peach" x="5% + 20" y="12%">Calories:</text><text class="data" x="95%-20" y="12%" id="txtCalories" text-length="4"/>
+    <text fill = "fb-red" x="5% + 20" y="29%">Heart Rate:</text><text class="data" x="95%-20" y="29%" id="txtHeartrate" text-length="7"/>
+    <text fill = "fb-red" x="5% + 20" y="46%">Zone:</text><text class="data" x="95%-20" y="46%" id="txtZone" text-length="20" />
+    <text fill = "fb-lime" x="5% + 20" y="63%">Active Time:</text><text class="data" x="95%-20" y="63%" id="txtActiveTime" text-length="10"/>
+    
+    <use id="btnPauseResume" href="#push-button-round" fill="fb-blue" x="1% + 25" y="100% - 95" width="40%" height="75" >
+       <set href="#text" attributeName="text-buffer" to="Pause " />
+       <set href="#text" attributeName="y" to="12" />
+    </use>
+
+    <use id="btnStop" href="#push-button-round" fill="fb-blue" x="62% - 25" y="100% - 95" width="38%" height="75" >
+      <set href="#text" attributeName="text-buffer" to="Stop" />
+       <set href="#text" attributeName="y" to="12" />
+    </use>
+  </svg>
+
+
+
+  <!-- Confirmation screen -->
+  <svg id="svgConfirm" display="none">
+
+        <!-- Black background -->
+        <rect class="full-size" fill="fb-black" />
+
+        <!-- Title and text -->
+        <text x="50%" y="35%" text-anchor="middle" class="data final" fill="fb-red">Stop Exercise</text>
+        <text x="50%" y="55%" text-anchor="middle" class="data">Are you sure?</text>
+
+        <!-- Left button -->
+        <use id="btnLeft" fill="green" href="#push-button-round" x="1% + 25" y="100% - 96" width="40%" height="75">
+          <set href="#text" attributeName="text-buffer" to="Resume" />
+           <set href="#text" attributeName="y" to="12" />
+        </use>
+
+        <!-- Right button -->
+        <use id="btnRight" fill="red" href="#push-button-round" x="61% - 25" y="100% - 96" width="35%" height="75">
+          <set href="#text" attributeName="text-buffer" to="Stop" />
+           <set href="#text" attributeName="y" to="12" />
+        </use>
+    </svg>
+
+</svg>
