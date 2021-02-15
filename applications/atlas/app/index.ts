@@ -156,7 +156,7 @@ function zeroPad(num) {
 }
 
 function formatActiveTime(activeTime) {
-    let seconds = (activeTime / 1000).toFixed(0);
+    let seconds = (activeTime / 1000);
     let minutes = Math.floor(seconds / 60);
     let hours;
     if (minutes > 59) {

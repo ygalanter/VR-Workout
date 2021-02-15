@@ -4,12 +4,16 @@ import { user } from "user-profile";
 import { me } from "appbit";
 import { vibration } from "haptics";
 
+document.onkeypress = function(e) {
+    e.preventDefault();
+}
+
 // Various screens
-const svgSelect = document.getElementById("svgSelect");
-const svgStart = document.getElementById("svgStart");
-const svgEnd = document.getElementById("svgEnd");
-const svgRun = document.getElementById("svgRun");
-const svgConfirm = document.getElementById("svgConfirm");
+const svgSelect = document.getElementById("svgSelect") as ContainerElement;
+const svgStart = document.getElementById("svgStart") as ContainerElement;
+const svgEnd = document.getElementById("svgEnd") as ContainerElement;
+const svgRun = document.getElementById("svgRun") as ContainerElement;
+const svgConfirm = document.getElementById("svgConfirm") as ContainerElement;
 
 // runnding data 
 const txtCalories = svgRun.getElementById("txtCalories");
@@ -35,9 +39,9 @@ svgSelect.getElementById("my-list").getElementsByClassName("tile-list-item").for
 
         touchMe.onclick = function() {
            
-            svgStart.getElementById("img").href = `background/${index}.png`;
-            svgEnd.getElementById("img").href = `background/${index}.png`;
-            svgRun.getElementById("img").href = `background/${index}.png`;
+            (svgStart.getElementById("img") as ImageElement).href = `background/${index}.png`;
+            (svgEnd.getElementById("img") as ImageElement).href = `background/${index}.png`;
+            (svgRun.getElementById("img") as ImageElement).href = `background/${index}.png`;
 
             workoutName = this.parent.getElementById("text").text;
 
@@ -99,8 +103,8 @@ svgConfirm.getElementById("btnLeft").onclick = function(evt) {
 svgConfirm.getElementById("btnRight").onclick = function(evt) {
 
     txtTotalCalories.text =  formatCalories(exercise.stats.calories);
-    txtHeartRateAvg.text = exercise.stats.heartRate.average;
-    txtHeartRateMax.text = exercise.stats.heartRate.max;
+    txtHeartRateAvg.text = exercise.stats.heartRate.average.toString();
+    txtHeartRateMax.text = exercise.stats.heartRate.max.toString();
     txtTotalTime.text = formatActiveTime(exercise.stats.activeTime);
 
     svgEnd.style.display = "inline";
@@ -154,7 +158,7 @@ function zeroPad(num) {
 }
 
 function formatActiveTime(activeTime) {
-    let seconds = (activeTime / 1000).toFixed(0);
+    let seconds = (activeTime / 1000);
     let minutes = Math.floor(seconds / 60);
     let hours;
     if (minutes > 59) {
