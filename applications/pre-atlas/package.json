@@ -1,0 +1,41 @@
+{
+  "name": "vr-workout-pre-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "fitbit": {
+    "appUUID": "a029feb2-3e4a-4dc9-b0f1-43694c33bd57",
+    "appType": "app",
+    "appDisplayName": "VR Workout",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#ffffff",
+    "requestedPermissions": [
+      "access_activity",
+      "access_exercise",
+      "access_heart_rate",
+      "access_user_profile"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson",
+      "gemini",
+      "mira"
+    ],
+    "i18n": {
+      "en": {
+        "name": "VR Workout"
+      }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~4.2.1",
+    "@fitbit/sdk-cli": "^1.7.3",
+    "fitbit-sdk-types": "^6.0.3"
+  },
+  "scripts": {
+    "compile": "fitbit-build",
+    "debug": "fitbit",
+    "build": "fitbit-build"
+  }
+}
