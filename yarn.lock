@@ -1287,6 +1287,11 @@ find-up@^4.1.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
+fitbit-sdk-types@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/fitbit-sdk-types/-/fitbit-sdk-types-6.0.3.tgz#bcdfa17a5c636f471b26a8022e754128694e1db8"
+  integrity sha512-0Ip+vLfpMVxC8I1qLznaRVNLSphqIqZbLejSG0jpMrUnBoyBIclIQBUQTOiGFsaTKWKTa+ubNvF+7v9TvjBnlQ==
+
 flush-write-stream@^1.0.2:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.1.1.tgz#8dd7d873a1babc207d94ead0c2e0e44276ebf2e8"
@@ -1967,9 +1972,9 @@ lodash.keys@^4.2.0:
   integrity sha1-oIYCrBLk+4P5H8H7ejYKTZujUgU=
 
 lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20:
-  version "4.17.20"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
-  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-update@^3.3.0:
   version "3.4.0"
